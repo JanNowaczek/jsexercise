@@ -7,3 +7,7 @@ const promise = fetch ('https://randomuser.me/api')
             } )
         console.log('inside first then after second then')
     })
+
+    .then((valueFromPromiseFromThen) => {
+        console.log(valueFromPromiseFromThen)
+    })
