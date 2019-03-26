@@ -1,4 +1,12 @@
-const promise = fetch ('https://randomuser.me/api')
+const writeInBody = message => document.body.innerText = message
+
+writeInBody('Laduje...')
+
+fetch ('https://randomuser.me/api')
     .then(response =>  response.json())
-    .then(data => console.log(data))
-    .finally(() => console.log('I will be here always'))
+    .then(data => writeInBody(
+            data.results[0].name.first +
+            ' '+
+            data.results[0].name.last
+    ))
+    .catch(error => writeInBody('Wystąpił błąd'))
