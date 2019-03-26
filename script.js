@@ -1,27 +1,10 @@
-class NumbersContainer {
-    constructor(){
-      this.numbers = []
-    }
-  
+const promise = fetch ('https://randomuser.me/api')
 
-    addNumber(number){
-        this.numbers = this.numbers.concat(number)
-        return this
-    }
 
-}
-  
-  const container1 = new NumbersContainer()
-  
-  container1.addNumber(4) 
-  console.log(container1.numbers)
-  
-  container1.addNumber(6) 
-  console.log(container1.numbers)
-  
-  container1
-    .addNumber(6)
-    .addNumber(9)
-    .addNumber(11) 
-
-    console.log(container1.numbers)
+promise
+    .then(response => {
+        response.json()
+            .then(data => {
+                console.log(data)
+            } )
+    })
