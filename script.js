@@ -1,13 +1,27 @@
-class Person{
-    constructor(name){
-        this.name = name
+class NumbersContainer {
+    constructor(){
+      this.numbers = []
     }
+  
 
-    changeName(newName){
-        this.name = newName
-
+    addNumber(number){
+        this.numbers = this.numbers.concat(number)
         return this
     }
-}
 
-const person1 = new Person ('Jasiek')
+}
+  
+  const container1 = new NumbersContainer()
+  
+  container1.addNumber(4) 
+  console.log(container1.numbers)
+  
+  container1.addNumber(6) 
+  console.log(container1.numbers)
+  
+  container1
+    .addNumber(6)
+    .addNumber(9)
+    .addNumber(11) 
+
+    console.log(container1.numbers)
